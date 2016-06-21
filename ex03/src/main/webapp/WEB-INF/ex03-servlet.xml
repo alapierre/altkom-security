@@ -14,7 +14,11 @@
 
     <mvc:annotation-driven />
     <!--tx:annotation-driven transaction-manager="core.txManager" /-->
-    
+
+    <mvc:resources mapping="/resources/**" location="/resources/"
+                   cache-period="31556926"/>
+
+
     <context:property-placeholder location="classpath:system.properties"/>
     
     <context:component-scan base-package="pl.atlkom.security.ex02.controller"/>

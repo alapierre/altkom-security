@@ -17,18 +17,18 @@
 
         zalogoawny: <sec:authentication property="principal.username"/><br>
 
-        <a href="/spring_security_login?logout">logout</a>
+        <a href="/logout">logout</a>
 
         <br>
 
-        <sec:authorize ifAnyGranted="ROLE_ADMIN">
-            <a href="/admin/adminSite">menu administratora</a>
+        <sec:authorize url="/person/create">
+            <a href="/person/create">Dodaj osobę</a>
         </sec:authorize>
 
         <br>
 
-        <sec:authorize url="/admin/adminSite">
-            <a href="/admin/adminSite">menu administratora</a>
+        <sec:authorize url="/person/list">
+            <a href="/person/list">Lista osób</a>
         </sec:authorize>
 
 
