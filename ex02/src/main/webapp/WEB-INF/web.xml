@@ -28,7 +28,8 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath:ex02-security.xml
+            classpath:ex02-security.xml,
+            classpath:ex02-core.xml
         </param-value>
     </context-param>
     
