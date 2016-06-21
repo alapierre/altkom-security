@@ -15,11 +15,19 @@
            ">
 		
     <security:http>
-        <security:intercept-url pattern="/*" access="ROLE_USER,ROLE_ADMIN" />        
-        <security:form-login />
+        <security:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        <security:intercept-url pattern="/j_spring_security_check" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        <security:intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
+        <security:intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN" />
+        <security:form-login login-page="/login"
+                             login-processing-url="/j_spring_security_check"
+                             password-parameter="pass"
+                             username-parameter="user"
+
+                                />
         <security:anonymous />
         <security:http-basic />
-        <security:logout />
+        <security:logout logout-url="/logout" />
         <security:remember-me />
     </security:http>     
         
