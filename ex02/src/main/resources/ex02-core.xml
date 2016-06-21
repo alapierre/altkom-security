@@ -27,6 +27,8 @@
 	
     <jpa:repositories base-package="pl.atlkom.security.ex02.repository"/>
 
+    <context:component-scan base-package="pl.atlkom.security.ex02.service"/>
+
     <!-- Data source -->
     <!--<bean id="core.dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">-->
         <!--<property name="driverClassName" value="${jdbc.driver}" />-->
