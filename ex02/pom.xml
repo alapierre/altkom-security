@@ -10,7 +10,7 @@
     <artifactId>ex02</artifactId>
     <packaging>war</packaging>
 
-    <name>Spring MVC Web Application</name>
+    <name>ex02</name>
     <url>http://www.softproject.com.pl</url>
 
     <properties>

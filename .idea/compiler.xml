@@ -24,11 +24,13 @@
         <processorPath useClasspath="true" />
         <module name="ex01" />
         <module name="ex02" />
+        <module name="ex03" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ex01" target="1.5" />
       <module name="ex02" target="1.5" />
+      <module name="ex03" target="1.5" />
       <module name="security" target="1.5" />
     </bytecodeTargetLevel>
   </component>
