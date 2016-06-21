@@ -24,6 +24,16 @@ public class Person {
 
     private int age;
 
+    private double salary;
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
     public long getId() {
         return id;
     }

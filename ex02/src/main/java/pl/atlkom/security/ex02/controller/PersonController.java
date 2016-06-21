@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import pl.atlkom.model.Person;
 import pl.atlkom.security.ex02.service.PersonService;
@@ -36,7 +37,38 @@ public class PersonController {
 
         personService.save(person);
 
-        return "person-list";
+        return "redirect:/person/list";
+    }
+
+    @RequestMapping("/list")
+    public ModelAndView list() {
+
+        Iterable<Person> persons = personService.loadAll();
+
+        ModelAndView model = new ModelAndView("person-list");
+        model.addObject("persons", persons);
+
+        return model;
+    }
+
+    @RequestMapping("/details")
+    public ModelAndView details(@RequestParam long id) {
+
+        Person p = personService.load(id);
+
+        System.out.println(p);
+
+        ModelAndView modelAndView = new ModelAndView("person-details");
+        modelAndView.addObject("person", p);
+
+        return modelAndView;
+    }
+
+    @RequestMapping("/delete")
+    public String delete(@RequestParam long id) {
+
+        personService.delete(id);
+        return "redirect:/person/list";
     }
 
 }

@@ -17,10 +17,12 @@
     <security:http>
         <security:intercept-url pattern="/person/create" access="ROLE_MANAGER" />
         <security:intercept-url pattern="/person/save" access="ROLE_MANAGER" />
+        <security:intercept-url pattern="/person/details" access="ROLE_MANAGER" />
+        <security:intercept-url pattern="/person/delete" access="ROLE_ADMIN" />
         <security:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <security:intercept-url pattern="/j_spring_security_check" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <security:intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
-        <security:intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN" />
+        <security:intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN,ROLE_MANAGER" />
         <security:form-login login-page="/login"
                              login-processing-url="/j_spring_security_check"
                              password-parameter="pass"
