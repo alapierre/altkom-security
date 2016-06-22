@@ -7,6 +7,9 @@
           <element id="module-output" name="ex03" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.4" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.4" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.4" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.14" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:3.2.9.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
