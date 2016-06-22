@@ -15,6 +15,7 @@
            ">
 		
     <security:http>
+        <security:intercept-url pattern="/favicon.ico" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <security:intercept-url pattern="/person/create" access="ROLE_MANAGER" />
         <security:intercept-url pattern="/person/save" access="ROLE_MANAGER" />
         <security:intercept-url pattern="/person/details" access="ROLE_MANAGER" />
@@ -29,6 +30,7 @@
                              password-parameter="pass"
                              username-parameter="user"
                              authentication-failure-url="/login?error"
+                             default-target-url="/"
                                 />
         <security:anonymous />
         <security:http-basic />
