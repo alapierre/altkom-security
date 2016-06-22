@@ -2,10 +2,13 @@ package pl.atlkom.security.ex02.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.HtmlUtils;
 import pl.atlkom.security.ex02.model.Person;
 import pl.atlkom.security.ex02.service.PersonService;
 
@@ -30,10 +33,27 @@ public class PersonController {
 
     }
 
+    @RequestMapping("/edit")
+    public ModelAndView edit(@RequestParam long id) {
+
+        ModelAndView modelAndView = new ModelAndView("add-person");
+
+        modelAndView.addObject("person", personService.load(id));
+
+        return modelAndView;
+
+    }
+
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String save(Person person) {
+    public String save(@Validated Person person, BindingResult br) {
 
         //person.setName(HtmlUtils.htmlEscape(person.getName()));
+
+        System.out.println("błędy = " + br.getAllErrors());
+
+        if(br.hasErrors()) {
+            return "add-person";
+        }
 
         System.out.println(person);
 
@@ -66,7 +86,7 @@ public class PersonController {
         return modelAndView;
     }
 
-    @RequestMapping("/delete")
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String delete(@RequestParam long id) {
 
         personService.delete(id);

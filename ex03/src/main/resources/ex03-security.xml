@@ -13,8 +13,11 @@
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
            http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
            ">
-		
+
     <security:http>
+
+        <!--<security:csrf/>-->
+
         <security:intercept-url pattern="/favicon.ico" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <security:intercept-url pattern="/person/create" access="ROLE_MANAGER" />
         <security:intercept-url pattern="/person/save" access="ROLE_MANAGER" />

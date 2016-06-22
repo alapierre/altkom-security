@@ -23,11 +23,22 @@
             <th>Operacje</th>
             <c:forEach items="${persons}" var="person">
                 <tr>
-                    <td>${person.name}</td>
+                    <td> <c:out value="${person.name}"/></td>
                     <td>${person.age}</td>
                     <td>
                         <sec:authorize ifAnyGranted="ROLE_MANAGER"><a href="/person/details?id=${person.id}">szczegóły</a></sec:authorize>
-                        <sec:authorize ifAnyGranted="ROLE_ADMIN"><a href="/person/delete?id=${person.id}">usuń</a></sec:authorize>
+                        <sec:authorize ifAnyGranted="ROLE_MANAGER"><a href="/person/edit?id=${person.id}">edycja</a></sec:authorize>
+
+                        <sec:authorize ifAnyGranted="ROLE_ADMIN">
+
+                            <form method="post" action="/person/delete">
+                                <input type="hidden" value="${person.id}" name="id">
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                <button type="submit">Usuń</button>
+                            </form>
+
+
+                        </sec:authorize>
                     </td>
                 </tr>
             </c:forEach>

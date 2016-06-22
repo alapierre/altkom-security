@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <spring:htmlEscape defaultHtmlEscape="true" />
+
 
 <div class="container">
 
@@ -25,12 +25,16 @@
             <div class="panel-body">
                 <form:form class="form" commandName="person" action="/person/save" method="post">
 
+
+
                     <div class="form-group">
+                        <form:errors path="name"></form:errors>
                         <label for="name">Imię i nazwisko</label>
-                        <form:input path="name" class="form-control" htmlEscape="true"/>
+                        <form:input path="name" class="form-control" />
                     </div>
 
                     <div class="form-group">
+                        <form:errors path="age"></form:errors>
                         <label for="age">Wiek</label>
                         <form:input path="age" class="form-control"/>
                     </div>
@@ -39,6 +43,8 @@
                         <label for="salary">Wynagrodzenie</label>
                         <form:input path="salary" class="form-control"/>
                     </div>
+
+                    <form:hidden path="id"/>
 
                     <button type="submit" class="btn btn-default">Zapisz</button>
 

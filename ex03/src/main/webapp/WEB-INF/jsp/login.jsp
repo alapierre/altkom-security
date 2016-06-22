@@ -35,6 +35,9 @@
         <label for="pass" class="sr-only">Hasło</label>
         <input id="pass" type="password" name="pass" class="form-control" placeholder="Hasło" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
+
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
     </form>
 
 </div> <!-- /container -->

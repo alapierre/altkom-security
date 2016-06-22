@@ -16,11 +16,9 @@ import javax.validation.constraints.Size;
  * @author Adrian Lapierre {@literal <adrian@soft-project.pl>}
  */
 
-@Entity
-public class Person {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class PersonDTO {
+
     private long id;
 
     @Size(min = 0, max = 32)
@@ -29,16 +27,6 @@ public class Person {
     @Min(1)
     @Max(199)
     private int age;
-
-    private double salary;
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
 
     public long getId() {
         return id;
@@ -66,7 +54,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "PersonDTO{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +

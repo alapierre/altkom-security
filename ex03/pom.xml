@@ -167,6 +167,17 @@
             <version>${spring.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>0.7.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.0.3.Final</version>
+        </dependency>
 
         <dependency>
             <artifactId>hibernate-jpa-2.1-api</artifactId>
