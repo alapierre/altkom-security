@@ -5,6 +5,7 @@ package pl.atlkom.security.ex02.controller;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import pl.atlkom.security.ex02.model.Person;
 import pl.atlkom.security.ex02.model.PersonDTO;
@@ -32,6 +33,7 @@ public class MyRestController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody PersonDTO p) {
 
         System.out.println(p);
