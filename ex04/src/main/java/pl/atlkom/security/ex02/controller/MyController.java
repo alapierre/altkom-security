@@ -66,4 +66,12 @@ public class MyController {
 
     }
 
+    @RequestMapping("/error/403")
+    public String error403() {
+
+        logger.error("próba niedozwolonego dostępu");
+
+        return "403";
+    }
+
 }
