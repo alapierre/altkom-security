@@ -93,6 +93,12 @@
         <error-code>404</error-code>
         <location>/404.htm</location>
     </error-page-->
+
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error/403</location>
+    </error-page>
+
     <welcome-file-list>
         <welcome-file>home.htm</welcome-file>
     </welcome-file-list>
