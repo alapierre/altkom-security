@@ -57,7 +57,7 @@
         <property name="jpaProperties">
             <props>
                 <!--<prop key="hibernate.default_schema">PUBLIC</prop>-->
-                <!--<prop key="hibernate.hbm2ddl.auto">create</prop>-->
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
                 <prop key="hibernate.hbm2ddl.import_files">sql/users.sql</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="org.hibernate.envers.audit_table_suffix">_AUDIT</prop>

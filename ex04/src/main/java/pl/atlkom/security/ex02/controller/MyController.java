@@ -41,20 +41,7 @@ public class MyController {
 
         model.addObject("name", "Ala");
 
-        SecurityContext ctx = SecurityContextHolder.getContext();
-
-        if(ctx != null) {
-            Authentication auth = ctx.getAuthentication();
-
-            logger.debug(auth.getPrincipal());
-
-            User user = (User) auth.getPrincipal();
-
-            logger.debug("logged user " + user.getUsername());
-
-        } else {
-            logger.debug("brak security kontext");
-        }
+        System.out.println("logged user " + userService.getLoggedUserName());
 
         return model;
     }
@@ -70,6 +57,8 @@ public class MyController {
     public String error403() {
 
         logger.error("próba niedozwolonego dostępu");
+
+        logger.error("logged user " + userService.getLoggedUserName());
 
         return "403";
     }

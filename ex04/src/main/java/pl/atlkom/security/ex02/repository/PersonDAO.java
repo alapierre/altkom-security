@@ -3,6 +3,7 @@
  */
 package pl.atlkom.security.ex02.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import pl.atlkom.security.ex02.model.Person;
@@ -11,5 +12,5 @@ import pl.atlkom.security.ex02.model.Person;
  * @author Adrian Lapierre {@literal <adrian@soft-project.pl>}
  */
 @Repository
-public interface PersonDAO extends CrudRepository<Person, Long> {
+public interface PersonDAO extends JpaRepository<Person, Long> {
 }

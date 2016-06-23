@@ -4,6 +4,8 @@
 package pl.atlkom.security.ex02.model;
 
 
+import org.hibernate.envers.Audited;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,11 +16,8 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class Person {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+@Audited
+public class Person extends BaseEntity {
 
     private String name;
 
@@ -35,11 +34,11 @@ public class Person {
     }
 
     public long getId() {
-        return id;
+        return getId();
     }
 
     public void setId(long id) {
-        this.id = id;
+        setId(id);
     }
 
     public String getName() {
@@ -61,7 +60,7 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 '}';
