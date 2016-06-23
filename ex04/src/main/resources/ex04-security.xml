@@ -16,7 +16,7 @@
 
     <bean id="request-matcher" class="pl.atlkom.security.ex02.CsrfSecurityRequestMatcher"/>
 
-    <security:http>
+    <security:http >
 
         <security:csrf request-matcher-ref="request-matcher"/>
 
@@ -40,8 +40,13 @@
                                 />
         <security:anonymous />
         <security:http-basic />
-        <security:logout logout-url="/logout" />
+        <security:logout logout-url="/logout" invalidate-session="true"/>
         <security:remember-me />
+
+        <security:session-management>
+            <security:concurrency-control error-if-maximum-exceeded="false" max-sessions="1" expired-url="/login"/>
+        </security:session-management>
+
     </security:http>     
         
     <security:authentication-manager alias="myAuthManager">

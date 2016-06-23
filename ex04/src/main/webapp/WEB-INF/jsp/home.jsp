@@ -11,13 +11,23 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
+        <script>
+            function logout() {
+                $.post( "/logout", "${_csrf.parameterName}=${_csrf.token}");
+                document.location.href = "/";
+            }
+        </script>
+
     </head>
     <body>
         <h1>${name}, hello World!</h1>
 
         zalogoawny: <sec:authentication property="principal.username"/><br>
 
-        <a href="/logout">logout</a>
+        <a href="#" onclick="logout()">logout</a>
 
         <br>
 

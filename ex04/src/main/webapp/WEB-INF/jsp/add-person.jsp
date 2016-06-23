@@ -25,6 +25,8 @@
             <div class="panel-body">
                 <form:form class="form" commandName="person" action="/person/save" method="post">
 
+                    <form:hidden path="id"/>
+
                     <div class="form-group">
                         <label for="name">Imię i nazwisko</label>
                         <form:input path="name" class="form-control" htmlEscape="true"/>

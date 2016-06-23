@@ -30,6 +30,17 @@ public class PersonController {
 
     }
 
+    @RequestMapping("/edit")
+    public ModelAndView edit(@RequestParam long id) {
+
+        ModelAndView modelAndView = new ModelAndView("add-person");
+
+        modelAndView.addObject("person", personService.load(id));
+
+        return modelAndView;
+
+    }
+
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(Person person) {
 
