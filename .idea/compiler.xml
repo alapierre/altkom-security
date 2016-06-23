@@ -26,6 +26,7 @@
         <module name="ex02" />
         <module name="ex03" />
         <module name="ex04" />
+        <module name="final" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -33,6 +34,7 @@
       <module name="ex02" target="1.5" />
       <module name="ex03" target="1.5" />
       <module name="ex04" target="1.5" />
+      <module name="final" target="1.5" />
       <module name="security" target="1.5" />
     </bytecodeTargetLevel>
   </component>
